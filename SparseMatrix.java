@@ -10,12 +10,14 @@ class SparceMat {
     private final int col;
     private final List<int[]> elements;
 
+    // constructor
     public SparceMat(int row, int col, List<int[]> element) {
         this.row = row;
         this.col = col;
         this.elements = List.copyOf(element);
     }
 
+    // getter
     public int getRow() {
         try {
             return this.row;
@@ -36,6 +38,11 @@ class SparceMat {
         }
     }
 
+    /**
+     * Calculates transpose of the matrix and returns it
+     * 
+     * @return transposeMat such as it is transpose of the given matrixs
+     */
     public SparceMat transpose() {
         try {
             List<int[]> transeposeMat = new ArrayList<>();
@@ -52,6 +59,12 @@ class SparceMat {
         }
     }
 
+    /**
+     * Checks if the matrix is symmetric
+     * 
+     * @return true if matrix is symmetrix else
+     *         false
+     */
     public boolean isSymmetric() {
         try {
 
@@ -80,6 +93,12 @@ class SparceMat {
         }
     }
 
+    /**
+     * Adds two matrices if row and column are same
+     * 
+     * @param s second matrix
+     * @return added matrix that is sum of two matrices
+     */
     public SparceMat add(SparceMat s) {
 
         try {
@@ -112,6 +131,13 @@ class SparceMat {
         }
     }
 
+    /**
+     * multiply two matrices if colum of firs matrix and column of second matrix are
+     * same
+     * 
+     * @param s second matrix
+     * @return added matrix that is sum of two matrices
+     */
     public SparceMat multiply(SparceMat s) {
 
         try {
@@ -267,6 +293,8 @@ public class SparseMatrix {
 
                         m2 = new SparceMat(row, col, ls2);
 
+                        System.out.println(m1.equals(m2));
+
                         SparceMat.printSparce(m1.multiply(m2));
                         break;
 
@@ -281,6 +309,7 @@ public class SparseMatrix {
                     break;
                 }
             }
+
         } catch (InputMismatchException e) {
             System.out.println("Input should be Integer");
         } catch (Exception e) {
