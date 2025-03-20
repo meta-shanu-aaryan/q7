@@ -192,7 +192,26 @@ class SparceMat {
 }
 
 public class SparseMatrix {
+
+    public int intScanner() {
+        Scanner sc = new Scanner(System.in);
+        int n;
+        while (true) {
+            try {
+                n = sc.nextInt();
+                if (n >= 0) {
+                    break;
+                }
+            } catch (InputMismatchException ime) {
+                System.out.println("Enter integer value only");
+            }
+        }
+        // sc.close();
+        return n;
+    }
+
     public static void main(String[] args) {
+        SparseMatrix sm = new SparseMatrix();
         Scanner sc = new Scanner(System.in);
 
         try {
@@ -202,20 +221,20 @@ public class SparseMatrix {
 
             System.out.println("Sparse matrix...");
             System.out.println("Enter row : ");
-            int row = sc.nextInt();
+            int row = sm.intScanner();
             System.out.println("Enter column : ");
-            int col = sc.nextInt();
+            int col = sm.intScanner();
             System.out.println("How many non-zero elements are there? ");
-            int elem = sc.nextInt();
+            int elem = sm.intScanner();
 
             for (int i = 0; i < elem; i++) {
                 int[] temp = new int[3];
                 System.out.println("Enter row for " + (i + 1) + " element ");
-                temp[0] = sc.nextInt();
+                temp[0] = sm.intScanner();
                 System.out.println("Enter column for " + (i + 1) + " element ");
-                temp[1] = sc.nextInt();
+                temp[1] = sm.intScanner();
                 System.out.println("Enter value for " + (i + 1) + " element ");
-                temp[2] = sc.nextInt();
+                temp[2] = sm.intScanner();
 
                 ls.add(temp);
             }
@@ -229,7 +248,7 @@ public class SparseMatrix {
                 System.out.println("3.\tAdd");
                 System.out.println("4.\tMultiply");
 
-                int action = sc.nextInt();
+                int action = sm.intScanner();
 
                 switch (action) {
                     case 1:
@@ -247,20 +266,20 @@ public class SparseMatrix {
                     case 3:
                         System.out.println("Sparse matrix 2...");
                         System.out.println("Enter row : ");
-                        row = sc.nextInt();
+                        row = sm.intScanner();
                         System.out.println("Enter row : ");
-                        col = sc.nextInt();
+                        col = sm.intScanner();
                         System.out.println("How many non-zero elements are there? ");
-                        elem = sc.nextInt();
+                        elem = sm.intScanner();
 
                         for (int i = 0; i < elem; i++) {
                             int[] temp = new int[3];
                             System.out.println("Enter row for " + (i + 1) + " element ");
-                            temp[0] = sc.nextInt();
+                            temp[0] = sm.intScanner();
                             System.out.println("Enter column for " + (i + 1) + " element ");
-                            temp[1] = sc.nextInt();
+                            temp[1] = sm.intScanner();
                             System.out.println("Enter value for " + (i + 1) + " element ");
-                            temp[2] = sc.nextInt();
+                            temp[2] = sm.intScanner();
 
                             ls2.add(temp);
                         }
@@ -273,20 +292,20 @@ public class SparseMatrix {
                     case 4:
                         System.out.println("Sparse matrix 2...");
                         System.out.println("Enter row : ");
-                        row = sc.nextInt();
+                        row = sm.intScanner();
                         System.out.println("Enter row : ");
-                        col = sc.nextInt();
+                        col = sm.intScanner();
                         System.out.println("How many non-zero elements are there? ");
-                        elem = sc.nextInt();
+                        elem = sm.intScanner();
 
                         for (int i = 0; i < elem; i++) {
                             int[] temp = new int[3];
                             System.out.println("Enter row for " + (i + 1) + " element ");
-                            temp[0] = sc.nextInt();
+                            temp[0] = sm.intScanner();
                             System.out.println("Enter column for " + (i + 1) + " element ");
-                            temp[1] = sc.nextInt();
+                            temp[1] = sm.intScanner();
                             System.out.println("Enter value for " + (i + 1) + " element ");
-                            temp[2] = sc.nextInt();
+                            temp[2] = sm.intScanner();
 
                             ls2.add(temp);
                         }
@@ -303,7 +322,7 @@ public class SparseMatrix {
                 }
 
                 System.out.println("Press 1 if want to continue....");
-                int num = sc.nextInt();
+                int num = sm.intScanner();
 
                 if (num != 1) {
                     break;
